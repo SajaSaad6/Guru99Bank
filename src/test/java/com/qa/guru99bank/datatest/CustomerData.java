@@ -1,5 +1,7 @@
 package com.qa.guru99bank.datatest;
 
+import com.qa.guru99banck.enums.Gender;
+
 public class CustomerData {
 
     private String name;
