@@ -3,7 +3,7 @@ package com.qa.guru99bank.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.qa.guru99bank.datatest.ErrorInput;
+import com.qa.guru99banck.enums.ErrorInput;
 
 public class LoginPage extends BasePage{
 
@@ -18,8 +18,6 @@ public class LoginPage extends BasePage{
 	*/
 	
 	private By welcomeText = By.className("heading3");
-	
-	//Expected message (User or Password is not valid)
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);

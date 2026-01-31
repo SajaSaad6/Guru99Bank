@@ -1,16 +1,13 @@
 package com.qa.guru99bank.pages;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import com.qa.guru99banck.enums.ErrorInput;
+import com.qa.guru99banck.enums.Gender;
 import com.qa.guru99bank.datatest.CustomerData;
-import com.qa.guru99bank.datatest.ErrorInput;
-import com.qa.guru99bank.datatest.Gender;
 
 public class NewCustomerPage extends BasePage{
 
@@ -31,6 +28,13 @@ public class NewCustomerPage extends BasePage{
 	private By submitButton = By.name("sub");
 	private By resetButton = By.name("res");
 	
+	private By customerTable = By.id("customer");
+	
+	private By newCustomerLink = By.linkText("New Customer");
+	
+	public void clikcNewCustomerLink() {
+		clickElement(newCustomerLink);
+	}
 	public void selectGender(Gender gender) {
 		clickElement(By.xpath("//input[@value='" + gender.getValue() + "']"));
 	}
@@ -64,22 +68,7 @@ public class NewCustomerPage extends BasePage{
 	}
 	
 	public Map<String, String> getCustomerDetails() {
-		Map<String, String> customerData = new HashMap<>();
-		
-		WebElement table = driver.findElement(By.id("customer"));
-		List<WebElement> rows = table.findElements(By.tagName("tr"));
-		
-		for (WebElement row : rows) {
-			List<WebElement> cells = row.findElements(By.tagName("td"));
-			
-			if (cells.size() == 2) {
-				String key = cells.get(0).getText().trim();
-				String value = cells.get(1).getText().trim();
-				customerData.put(key,  value);
-			}
-		}
-		return customerData;
+		return getTableDetails(customerTable);
 	}
 	
-	//Alert errorMessage "please fill all fields"
 }
