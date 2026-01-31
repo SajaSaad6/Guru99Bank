@@ -1,0 +1,12 @@
+# IDE
+.classpath
+.project
+.settings/
+
+# Build output
+target/
+test-output/
+
+# OS
+.DS_Store
+
