@@ -1,0 +1,16 @@
+{
+  "validCustomers": [
+    {
+      "name": "John Doe",
+      "gender": "MALE",
+      "dob": "01-01-1990",
+      "address": "Main Street 1",
+      "city": "London",
+      "state": "UK",
+      "pin": "123456",
+      "mobile": "9876543210",
+      "email": "john.doe@test.com",
+      "password": "Pass@123"
+    }
+  ]
+}
