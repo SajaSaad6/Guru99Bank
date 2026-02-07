@@ -1,18 +1,97 @@
 
 ## Guru99 Bank Automation Project
-This project contains automated UI tests for the Guru99 Bank demo application, built using Selenium WebDriver and Java, following the Page Object Model (POM) design pattern.
-The goal is to create maintainable, readable, and scalable test automation for core banking flows such as login, customer management, account operations, balance inquiry, and account statement.
+This project is a UI Test Automation Framework built for the Guru99 Banking web application using:
 
-## Tech Stack
 - Java
 - Selenium WebDriver
-- TesNG
-- Maven 
-- Page Object Model (POM)
+- TestNG
+- Jackson (JSON data-driven testing)
+- Maven
+
+The framework automates core banking functionalities such as customer creation, account management, and withdrawal transactions while validating both positive and negative scenarios.
 
 ## Project Structure
-- src/test/java ⇒ Test Cases, Page Objects, Test Data
-- pom.xml ⇒ Maven dependencies
-- testing.xml ⇒ Test suite configuration
+```
+src
+ ├── main
+ └── test
+      ├── java
+      │     └── com.qa.guru99bank
+      │            ├── config
+      │            ├── testdata
+      │            ├── enums
+      │            ├── model
+      │            ├── utils
+      │            ├── pages
+      │            └── tests
+      │
+      └── resources
+            └── testdata
+                  ├── customers_valid.json
+                  ├── customers_invalid_fields.json
+                  └── customer_business_rules
+```
 
+## Framework Design
+
+#### Page Object Model (POM)
+Each page has its own class
+- loginPage
+- NewCustomerPage
+- NewAccountPage
+- WithdrawalPage
+
+#### Data-Driven Testing 
+Input test data is stored in JSON files, the framework: 
+- Reads Valid and invalid test cases
+- Retrieves specfic test cases by name
+- Supports multiple validation scenarios
+
+#### Reusable Utilities 
+The framework includes helper classes for:
+- Generating dynamic emails
+- Setting specific fields empty dynamically
+- Creating customers and returning IDs
+- Handling alert messages
+- Common test setup logic
+
+## Test Coverage
+
+#### Customer Management
+
+- Create new customer (valid data)
+- Validate inline field errors
+- Submit with empty fields
+- Prevent duplicate email registration
+
+#### Account Management
+- Create new account
+- Handle fake customer ID
+- Validate minimum deposit rule
+- Verify account creation confirmation
+
+#### Withdrawal
+- Successful withdrawal
+- Prevent withdrawal with insufficient balance
+- Validate confirmation table header
+- Validate alert messages
+
+## How to run the test
+1. Clone the Repository
+
+```
+git clone <https://github.com/SajaSaad6/Guru99Bank.git>
+```
+
+2. Intall Dependencies
+
+```
+mvn clean install
+```
+
+3. Run Tests
+
+```
+mvn test
+```
 
