@@ -33,6 +33,15 @@ public class BasePage {
 		return wait.until(ExpectedConditions.urlContains(expectedUrlPart));
 	}
 	
+	public String getAlertMessage() {
+		try {			
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			return alert.getText();
+		} catch (NoAlertPresentException e) {
+			log.debug("No alert present. Conitnuing execution.");
+			return null;
+		}
+	}
 	
 	protected void handleAlertIfPresent() {
 		try {

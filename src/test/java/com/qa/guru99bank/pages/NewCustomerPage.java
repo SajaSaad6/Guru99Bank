@@ -5,9 +5,9 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.qa.guru99banck.enums.ErrorInput;
-import com.qa.guru99banck.enums.Gender;
-import com.qa.guru99bank.datatest.CustomerData;
+import com.qa.guru99bank.enums.ErrorInput;
+import com.qa.guru99bank.enums.Gender;
+import com.qa.guru99bank.model.CustomerData;
 
 public class NewCustomerPage extends BasePage{
 
@@ -32,15 +32,16 @@ public class NewCustomerPage extends BasePage{
 	
 	private By newCustomerLink = By.linkText("New Customer");
 	
-	public void clikcNewCustomerLink() {
+	private By successMessage = By.className("heading3");
+	
+	public void clickNewCustomerLink() {
 		clickElement(newCustomerLink);
 	}
 	public void selectGender(Gender gender) {
 		clickElement(By.xpath("//input[@value='" + gender.getValue() + "']"));
 	}
 
-	public void createNewCustomer(CustomerData data) 
-	{
+	public void fillNewCustomerFields(CustomerData data) {
 		enterText(customerNameFields, data.getName());
 		selectGender(data.getGender());
 		enterText(dateOfBirthField, data.getDob());
@@ -51,6 +52,11 @@ public class NewCustomerPage extends BasePage{
 		enterText(mobileNumberField, data.getMobile());
 		enterText(emailField, data.getEmail());
 		enterText(passwordField, data.getPassword());
+		
+	}
+	public void createNewCustomer(CustomerData data) 
+	{
+		fillNewCustomerFields(data);
 		
 		clickSubmitButton();
 	}
@@ -71,4 +77,7 @@ public class NewCustomerPage extends BasePage{
 		return getTableDetails(customerTable);
 	}
 	
+	public String getSuccessMessage() {
+		return getText(successMessage);
+	}
 }

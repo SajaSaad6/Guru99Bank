@@ -24,7 +24,7 @@ public class BaseTest {
 		switch (browser.toLowerCase()) {
 			case "firefox":
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
-				firefoxOptions.addArguments("--headless");
+				//firefoxOptions.addArguments("--headless");
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver(firefoxOptions);
 				break;
@@ -45,8 +45,8 @@ public class BaseTest {
 	}
 	
 	public void tearDown() {
-		/*if (driver != null) {
+		if (driver != null) {
 			driver.quit();
-		}*/
+		}
 	}
 }

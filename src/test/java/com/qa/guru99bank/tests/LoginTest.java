@@ -1,6 +1,7 @@
 package com.qa.guru99bank.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,5 +23,10 @@ public class LoginTest extends BaseTest{
 		Assert.assertEquals(loginPage.getWelcomeMessage(), 
 				"Welcome To Manager's Page of Guru99 Bank",
 				"User should redirected to manager page and shows welcome message");
+	}
+	
+	@AfterMethod
+	public void teardown() {
+		super.tearDown();
 	}
 }

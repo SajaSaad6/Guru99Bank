@@ -3,7 +3,7 @@ package com.qa.guru99bank.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.qa.guru99banck.enums.ErrorInput;
+import com.qa.guru99bank.enums.ErrorInput;
 
 public class LoginPage extends BasePage{
 
@@ -12,10 +12,6 @@ public class LoginPage extends BasePage{
 	private By passwordInput = By.name("password");
 	private By loginButton = By.name("btnLogin");
 	private By resetButton = By.name("btnReset");
-	
-	/*private By blankUseridFieldMessage = By.id("message23");
-	private By blankPasswordFieldMessage = By.id("message18");
-	*/
 	
 	private By welcomeText = By.className("heading3");
 	

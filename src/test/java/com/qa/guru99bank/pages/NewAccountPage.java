@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.qa.guru99bank.enums.AccountType;
+
 public class NewAccountPage extends BasePage{
 
 	public NewAccountPage(WebDriver driver) {
@@ -28,9 +30,10 @@ public class NewAccountPage extends BasePage{
 	public void clickNewAccountLink() {
 		clickElement(newAccountLink);
 	}
-	public void selectAccountType(String type) {
+	public void selectAccountType(AccountType type) {
 		Select select = new Select(driver.findElement(accountTypeDropDown));
-		select.selectByVisibleText(type);
+		String value = type.getValue();
+		select.selectByVisibleText(value);
 	}
 	
 	public void enterCustomerId(String id) {
@@ -49,7 +52,7 @@ public class NewAccountPage extends BasePage{
 		clickElement(resetButton);
 	}
 	
-	public void createNewAccount(String id, String type, String amount) {
+	public void createNewAccount(String id, AccountType type, String amount) {
 		enterCustomerId(id);
 		selectAccountType(type);
 		enterInitialDeposit(amount);
