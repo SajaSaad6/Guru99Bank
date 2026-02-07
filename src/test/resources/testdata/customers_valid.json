@@ -1,0 +1,84 @@
+{
+  "validCustomers": [
+    {
+	  "case": "NewCustomer",
+	  "customerData": {
+	      "name": "John Doe",
+	      "gender": "MALE",
+	      "dob": "01-01-1990",
+	      "address": "Main Street 1",
+	      "city": "London",
+	      "state": "UK",
+	      "pin": "123456",
+	      "mobile": "9876543210",
+	      "email": "john.doe1@test.com",
+	      "password": "Pass@123"
+	 	 }
+    },
+	
+	{
+	  "case": "NewAccount",
+	  "customerData": {
+	      "name": "Sally",
+	      "gender": "FEMALE",
+	      "dob": "01-02-1993",
+	      "address": "Main Street 1",
+	      "city": "Granada",
+	      "state": "Spain",
+	      "pin": "123456",
+	      "mobile": "9876543210",
+	      "email": "sally21@test.com",
+	      "password": "Pass@123"
+	 	 }
+	 },
+	 
+	 {
+	  "case": "Withdrawal",
+	  "customerData": {
+	      "name": "Safaa",
+	      "gender": "MALE",
+	      "dob": "07-10-1993",
+	      "address": "Main Street 1",
+	      "city": "Baghdad",
+	      "state": "Iraq",
+	      "pin": "123456",
+	      "mobile": "9876543210",
+	      "email": "safaa21@test.com",
+	      "password": "Pass@123"
+ 		}
+	 },
+	 
+	 {
+ 	  "case": "EmptyFields",
+ 	  "customerData": {
+ 	      "name": "Ali",
+ 	      "gender": "MALE",
+ 	      "dob": "07-07-1999",
+ 	      "address": "Main Street 1",
+ 	      "city": "Isanbul",
+ 	      "state": "Turkey",
+ 	      "pin": "123456",
+ 	      "mobile": "9876543210",
+ 	      "email": "ali1@test.com",
+ 	      "password": "Pass@123"
+ 		 }
+	 },
+	 
+	 {
+ 	  "case": "ExistEmail",
+ 	  "customerData": {
+ 	      "name": "Sarah",
+ 	      "gender": "FEMALE",
+ 	      "dob": "01-12-2000",
+ 	      "address": "Main Street 1",
+ 	      "city": "Paris",
+ 	      "state": "France",
+ 	      "pin": "123456",
+ 	      "mobile": "9876543210",
+ 	      "email": "sarah1@test.com",
+ 	      "password": "Pass@123"
+ 	 	 }
+ 	 }
+	 
+  ]
+}

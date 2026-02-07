@@ -1,0 +1,164 @@
+{
+  "invalidFieldCases": [
+	{
+      "case": "empty_name",
+      "field": "name",
+      "customerData": {
+        "name": "John123",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123456",
+        "mobile": "9876543210",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Numbers are not allowed"
+    },
+		
+	{
+      "case": "numeric_name",
+      "field": "name",
+      "customerData": {
+        "name": "John123",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123456",
+        "mobile": "9876543210",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Numbers are not allowed"
+    },
+	
+	{
+      "case": "special_characters_name",
+      "field": "name",
+      "customerData": {
+        "name": "$Johny",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123456",
+        "mobile": "9876543210",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Special characters are not allowed"
+    },
+
+    {
+      "case": "pin_too_short",
+      "field": "pin",
+      "customerData": {
+        "name": "John",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123",
+        "mobile": "9876543210",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "PIN Code must have 6 Digits"
+    },
+	
+	{
+      "case": "character_pin",
+      "field": "pin",
+      "customerData": {
+        "name": "John",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "pin",
+        "mobile": "9876543210",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Characters are not allowed"
+    },
+	
+	{
+      "case": "invalid_email_format",
+      "field": "email",
+      "customerData": {
+        "name": "John",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123456",
+        "mobile": "9876543210",
+        "email": "test",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Email-ID is not valid"
+    },
+  	{
+      "case": "character_in_mobile",
+      "field": "mobile",
+      "customerData": {
+        "name": "John",
+        "gender": "MALE",
+        "dob": "1990-01-01",
+        "address": "Street",
+        "city": "London",
+        "state": "UK",
+        "pin": "123456",
+        "mobile": "Test",
+        "email": "test@test.com",
+        "password": "Pass@123"
+      },
+      "expectedMessage": "Characters are not allowed"
+    },
+	
+	{
+	    "case": "special_character_in_mobile",
+	    "field": "mobile",
+	    "customerData": {
+	      "name": "John",
+	      "gender": "MALE",
+	      "dob": "1990-01-01",
+	      "address": "Street",
+	      "city": "London",
+	      "state": "UK",
+	      "pin": "123456",
+	      "mobile": "123#%",
+	      "email": "test@test.com",
+	      "password": "Pass@123"
+	    },
+	    "expectedMessage": "Special characters are not allowed"
+	  },
+	  
+	  {
+  	    "case": "special_character_city",
+  	    "field": "city",
+  	    "customerData": {
+  	      "name": "John",
+  	      "gender": "MALE",
+  	      "dob": "1990-01-01",
+  	      "address": "Street",
+  	      "city": "!London",
+  	      "state": "UK",
+  	      "pin": "123456",
+  	      "mobile": "12303435",
+  	      "email": "test@test.com",
+  	      "password": "Pass@123"
+  	    },
+  	    "expectedMessage": "Special characters are not allowed"
+  	  }
+  ]
+}
