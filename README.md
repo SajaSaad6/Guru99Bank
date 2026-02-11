@@ -1,6 +1,6 @@
 
 ## Guru99 Bank Automation Project
-This project is a UI Test Automation Framework built for the Guru99 Banking web application using:
+UI Test Automation Framework built for the Guru99 Banking web application using:
 
 - Java
 - Selenium WebDriver
